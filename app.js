@@ -13,6 +13,12 @@ let vm = Vue.createApp({
             this.rotateX = 0
             this.rotateY = 0
             this.rotateZ = 0
+        },
+        async copy() {
+            let text = `transform:${this.changes.transform};`
+            await navigator.clipboard.writeText(text)
+
+            alert(text + " copied to clipboard!")
         }
     },
     computed: {
