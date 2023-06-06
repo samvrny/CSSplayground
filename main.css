@@ -46,6 +46,11 @@ main input[type="range"] {
   margin-bottom: 10px;
   width: 200px;
 }
+main select {
+  display: block;
+  margin-bottom: 30px;
+  width: 200px;
+}
 section.settings {
   width: 50%;
   z-index: 2;

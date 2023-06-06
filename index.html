@@ -24,13 +24,22 @@
           <label>rotateZ: {{ rotateZ }}deg; </label>
           <input type="range" min="-180" max="180" v-model="rotateZ" />
 
+          <select v-model="color">
+            <option value="#8d81f3">Purple</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+            <option value="orange">Orange</option>
+          </select>
+
           <button type="button" @click.prevent="reset">Reset</button>
           <button type="button" @click.prevent="copy">Copy</button>
         </div>
       </section>
       <section class="output">
         <div class="box-container">
-          <div class="box" :style="changes"></div>
+          <div class="box" :style="[changes, changeColor]"></div>
         </div>
       </section>
     </main>

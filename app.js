@@ -4,7 +4,8 @@ let vm = Vue.createApp({
             perspective: 100,
             rotateY: 0,
             rotateX: 0,
-            rotateZ: 0
+            rotateZ: 0,
+            color: '#8d81f3'
         }
     },
     methods: {
@@ -13,9 +14,10 @@ let vm = Vue.createApp({
             this.rotateX = 0
             this.rotateY = 0
             this.rotateZ = 0
+            this.color = '#8d81f3'
         },
         async copy() {
-            let text = `transform:${this.changes.transform};`
+            let text = `transform:${this.changes.transform}background: ${this.changeColor.background};`
             await navigator.clipboard.writeText(text)
 
             alert(text + " copied to clipboard!")
@@ -30,6 +32,11 @@ let vm = Vue.createApp({
                 rotateY(${this.rotateY}deg)
                 rotateZ(${this.rotateZ}deg)
                 `
+            }
+        },
+        changeColor() {
+            return {
+                background: `${this.color}`
             }
         }
     }
